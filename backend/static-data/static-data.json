@@ -1,0 +1,38 @@
+{
+    "mongoDbConnection": {
+        "uris": "mongodb://localhost:27017/node-angular-mean",
+        "options": {
+            "ConnectionOptions": {
+                "useNewUrlParser": true,
+                "useUnifiedTopology": true
+            }
+        },
+        "messages": {
+            "sucess": "Connected to Mongo DB.",
+            "sucessSarcasm": "Go ahead and dev something amazing today!",
+            "failed": "Connection to DB failed!",
+            "failedSarcasm": "We gonna fix it, let's dig in ..:`~/:.."
+        }
+    },
+
+    "strFormater": {
+        "newLine": "\n"
+    },
+
+    "routes": {
+        "postsRoutes": {
+            "routes": {
+                "postApost": "",
+                "getPosts": "",
+                "deletePost": "/:id",
+                "updateApost": ""
+            }
+        },
+        "userRoutes": {
+            "routes": {
+                "signUp": "/signUp",
+                "login": "/login"
+            }
+        }
+    }
+}
