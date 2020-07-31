@@ -8,7 +8,21 @@ const postsRoutes = require('./routes/posts-routes');
 const userRoutes = require('./routes/user-routes');
 const staticData = require('./static-data/static-data.json');
 
-mongoose.connect(staticData.mongoDbConnection.uris, staticData.mongoDbConnection.options.ConnectionOptions)
+/**
+ * My local Mongoose to MongoDB connnection.
+ */
+// mongoose.connect(staticData.mongoDbConnection.uris, staticData.mongoDbConnection.options.ConnectionOptions)
+// .then(() => {
+// console.log(staticData.mongoDbConnection.messages.sucess + staticData.strFormater.newLine + staticData.mongoDbConnection.messages.sucessSarcasm);
+// }).catch(() => {
+//     console.log(staticData.mongoDbConnection.messages.failed + staticData.strFormater.newLine + staticData.mongoDbConnection.messages.failedSarcasm);
+// });
+
+/**
+ * MOngoDB atlas cluster connection
+ */
+mongoose.connect('mongodb+srv://nsc:' + staticData.mongoDbAtlasCluster.password + '@cluster0.8f5xp.mongodb.net/meanPostAppDb?retryWrites=true&w=majority',
+staticData.mongoDbConnection.options.ConnectionOptions)
 .then(() => {
 console.log(staticData.mongoDbConnection.messages.sucess + staticData.strFormater.newLine + staticData.mongoDbConnection.messages.sucessSarcasm);
 }).catch(() => {
